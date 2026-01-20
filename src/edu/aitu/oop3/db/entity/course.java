@@ -26,6 +26,7 @@ public class course {
         public String getTitle() {
             return title;
         }
-
-
+        public int getInstructorId() {
+        return instructorId;
+    }
 }
