@@ -1,38 +1,51 @@
 package edu.aitu.oop3.db;
+
 import edu.aitu.oop3.db.DatabaseConnection;
+import edu.aitu.oop3.db.IDB;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+
 public class DemoUsersExample {
+
     public static void main(String[] args) {
         System.out.println("Demo: create table, insert, select");
-        try (Connection connection = DatabaseConnection.getConnection()) {
+
+        IDB db = DatabaseConnection.getInstance();
+
+        try (Connection connection = db.getConnection()) {
+            System.out.println("Connected successfully!");
+
             createTableIfNeeded(connection);
-            insertUser(connection, "Alice", "alice@example.com");
-            insertUser(connection, "Bob", "bob@example.com");
+            insertUser(connection, "Алихан", "alikhan@example.com");
+            insertUser(connection, "Руза", "ruza@example.com");
             printAllUsers(connection);
+
         } catch (SQLException e) {
-            System.out.println("Database error:");
+            System.out.println("Database connection failed: " + e.getMessage());
             e.printStackTrace();
         }
     }
+
     private static void createTableIfNeeded(Connection connection) throws SQLException {
         String sql = """
- create table if not exists demo_users (
- id serial primary key,
- name varchar(100) not null,
- email varchar(100) unique not null
- );
- """;
-        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
-            stmt.execute();
+                CREATE TABLE IF NOT EXISTS demo_users (
+                    id SERIAL PRIMARY KEY,
+                    name VARCHAR(100) NOT NULL,
+                    email VARCHAR(100) UNIQUE NOT NULL
+                );
+                """;
+        try (Statement stmt = connection.createStatement()) {
+            stmt.execute(sql);
             System.out.println("Table demo_users is ready.");
         }
     }
+
     private static void insertUser(Connection connection, String name, String email) throws SQLException {
-        String sql = "insert into demo_users (name, email) values (?, ?) " +
-                "on conflict (email) do nothing;";
+        String sql = "INSERT INTO demo_users (name, email) VALUES (?, ?) " +
+                "ON CONFLICT (email) DO NOTHING;";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setString(1, name);
             stmt.setString(2, email);
@@ -40,8 +53,9 @@ public class DemoUsersExample {
             System.out.println("Inserted rows: " + rows);
         }
     }
+
     private static void printAllUsers(Connection connection) throws SQLException {
-        String sql = "select id, name, email from demo_users order by id";
+        String sql = "SELECT id, name, email FROM demo_users ORDER BY id";
         try (PreparedStatement stmt = connection.prepareStatement(sql);
              ResultSet rs = stmt.executeQuery()) {
             System.out.println("Current users:");
@@ -49,7 +63,7 @@ public class DemoUsersExample {
                 int id = rs.getInt("id");
                 String name = rs.getString("name");
                 String email = rs.getString("email");
-                System.out.printf(" %d | %s | %s%n", id, name, email);
+                System.out.printf("%d | %s | %s%n", id, name, email);
             }
         }
     }
