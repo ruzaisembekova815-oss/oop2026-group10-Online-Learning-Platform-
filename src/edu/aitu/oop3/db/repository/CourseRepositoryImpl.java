@@ -94,9 +94,9 @@ public class CourseRepositoryImpl implements CourseRepository {
             int rows = ps.executeUpdate();
 
             if (rows == 0) {
-                // Optional: throw meaningful exception (add later if you have custom one)
+                
                 System.out.println("Warning: No course found with id " + id + " to delete.");
-                // or: throw new RuntimeException("Course not found with id: " + id);
+                
             }
         } catch (SQLException e) {
             throw new RuntimeException("Failed to delete course: " + e.getMessage(), e);
