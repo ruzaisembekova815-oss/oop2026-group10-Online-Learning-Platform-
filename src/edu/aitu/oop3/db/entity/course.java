@@ -7,11 +7,11 @@ public class course {
     private int instructorId;
     private boolean archived;
 
-    // No-arg constructor (important for creating empty objects)
+    
     public course() {
     }
 
-    // Full constructor (optional, but useful)
+    
     public course(int id, String title, String description, int instructorId, boolean archived) {
         this.id = id;
         this.title = title;
@@ -20,7 +20,7 @@ public class course {
         this.archived = archived;
     }
 
-    // Getters (you already have most)
+    
     public int getId() {
         return id;
     }
@@ -41,7 +41,7 @@ public class course {
         return archived;
     }
 
-    // Add setters (critical!)
+    
     public void setId(int id) {
         this.id = id;
     }
@@ -62,7 +62,7 @@ public class course {
         this.archived = archived;
     }
 
-    // Optional: toString() for easy printing in Main/demo
+   
     @Override
     public String toString() {
         return "Course{" +
