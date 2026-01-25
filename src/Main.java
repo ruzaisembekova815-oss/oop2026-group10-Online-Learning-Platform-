@@ -12,7 +12,7 @@ public class Main {
 
 
 
-        // 1. JDBC check
+        
         System.out.println("Connecting to Supabase...");
         try {
             IDB db = DatabaseConnection.getInstance();
@@ -23,7 +23,7 @@ public class Main {
             e.printStackTrace();
         }
 
-        // 2. User stories demo (without real DB logic)
+  
         EnrollmentService enrollmentService = new EnrollmentService();
         ProgressService progressService = new ProgressService();
 
