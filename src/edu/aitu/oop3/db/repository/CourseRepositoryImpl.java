@@ -31,7 +31,7 @@ public class CourseRepositoryImpl implements CourseRepository {
             ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next()) {
-                course.setId(rs.getInt(1));  // ← sets auto-generated ID back to object
+                course.setId(rs.getInt(1));  
             }
             return course;
         } catch (SQLException e) {
