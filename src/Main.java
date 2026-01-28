@@ -1,4 +1,8 @@
 import edu.aitu.oop3.db.DatabaseConnection;
+import edu.aitu.oop3.db.IDB;
+import edu.aitu.oop3.db.repository.CourseRepository;
+import edu.aitu.oop3.db.repository.CourseRepositoryImpl;
+import edu.aitu.oop3.db.service.CourseService;
 import edu.aitu.oop3.db.service.EnrollmentService;
 import edu.aitu.oop3.db.service.ProgressService;
 
@@ -8,20 +12,28 @@ import java.sql.SQLException;
 public class Main {
     public static void main(String[] args) {
 
-        // 1. JDBC check
+
+
+
+
         System.out.println("Connecting to Supabase...");
-        try (Connection connection = DatabaseConnection.getConnection()) {
-            System.out.println("Connected successfully!");
+        try {
+            IDB db = DatabaseConnection.getInstance();
+            CourseRepository courseRepo = new CourseRepositoryImpl(db);
+            Connection conn = db.getConnection();
+            System.out.println("Connected via IDB!");
+            conn.close();
         } catch (SQLException e) {
-            System.out.println("Database connection failed");
-            return;
+            e.printStackTrace();
         }
 
-        // 2. User stories demo (without real DB logic)
+
         EnrollmentService enrollmentService = new EnrollmentService();
         ProgressService progressService = new ProgressService();
+        CourseService courseService = new CourseService();
 
         enrollmentService.enroll(1, 1);
         progressService.markCompleted(1, 1);
+        courseService.getCoursesByInstructor(13);
     }
 }
