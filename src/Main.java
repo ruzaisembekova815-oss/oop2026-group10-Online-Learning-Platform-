@@ -19,7 +19,6 @@ public class Main {
         System.out.println("Connecting to Supabase...");
         try {
             IDB db = DatabaseConnection.getInstance();
-            CourseRepository courseRepo = new CourseRepositoryImpl(db);
             Connection conn = db.getConnection();
             System.out.println("Connected via IDB!");
             conn.close();
@@ -30,10 +29,9 @@ public class Main {
 
         EnrollmentService enrollmentService = new EnrollmentService();
         ProgressService progressService = new ProgressService();
-        CourseService courseService = new CourseService();
 
         enrollmentService.enroll(1, 1);
         progressService.markCompleted(1, 1);
-        courseService.getCoursesByInstructor(13);
+
     }
 }
