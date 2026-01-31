@@ -5,11 +5,11 @@ public class PlatformConfig {
     private static PlatformConfig instance;
 
     private final String platformName;
-    private final int maxCoursesPerInstructor;
+    private final int maxCoursePerInstructor;
 
     private PlatformConfig() {
             this.platformName = "Online Learning Platform";
-            this.maxCoursesPerInstructor = 20;
+            this.maxCoursePerInstructor = 20;
     }
 
     public static synchronized PlatformConfig getInstance() {
@@ -23,8 +23,8 @@ public class PlatformConfig {
         return platformName;
     }
 
-    public int getMaxCoursesPerInstructor() {
-        return maxCoursesPerInstructor;
+    public int getMaxCoursePerInstructor() {
+        return maxCoursePerInstructor;
     }
 }
 

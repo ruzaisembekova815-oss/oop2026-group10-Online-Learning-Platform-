@@ -7,13 +7,13 @@ public class Page<T> {
     private final List<T> content;
     private final int page;
     private final int size;
-    private final long totalElements;
+    private final long totalelements;
 
-    public Page(List<T> content, int page, int size, long totalElements) {
+    public Page(List<T> content, int page, int size, long totalelements) {
         this.content = content;
         this.page = page;
         this.size = size;
-        this.totalElements = totalElements;
+        this.totalelements = totalelements;
     }
 
     public List<T> getContent() {
@@ -28,12 +28,12 @@ public class Page<T> {
         return size;
     }
 
-    public long getTotalElements() {
-        return totalElements;
+    public long getTotalelements() {
+        return totalelements;
     }
 
     public int getTotalPages() {
-        return (int) Math.ceil((double) totalElements / size);
+        return (int) Math.ceil((double) totalelements / size);
     }
 }
 
