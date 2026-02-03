@@ -12,11 +12,11 @@ public class course {
     private List<Lesson> lessons = new ArrayList<>();
     private List<String> tags = new ArrayList<>();
 
-    // Constructors (add if missing)
+    
     public course() {
     }
 
-    // Existing getters from Milestone 1 (add if missing)
+   
     public int getId() {
         return id;
     }
@@ -49,7 +49,7 @@ public class course {
         return tags;
     }
 
-    // MISSING SETTERS — ADD THESE!
+   
     public void setTitle(String title) {
         this.title = title;
     }
