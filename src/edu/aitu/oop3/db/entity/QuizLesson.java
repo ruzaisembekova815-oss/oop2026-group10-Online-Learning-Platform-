@@ -1,7 +1,7 @@
 package edu.aitu.oop3.db.entity;
 
 public class QuizLesson extends Lesson {
-    private String questions;  // Simple string for questions (or List<String> if needed)
+    private String questions; 
 
     public QuizLesson(String title, int courseId, String questions) {
         super(title, courseId);
