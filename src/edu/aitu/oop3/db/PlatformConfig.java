@@ -1,15 +1,15 @@
-package edu.aitu.oop3.db.secml;
+package edu.aitu.oop3.db;
 
 public class PlatformConfig {
 
     private static PlatformConfig instance;
 
     private final String platformName;
-    private final int maxCoursePerInstructor;
+    private final int maxCoursesPerInstructor;
 
     private PlatformConfig() {
-            this.platformName = "Online Learning Platform";
-            this.maxCoursePerInstructor = 20;
+        this.platformName = "Online Learning Platform";
+        this.maxCoursesPerInstructor = 20;
     }
 
     public static synchronized PlatformConfig getInstance() {
@@ -23,9 +23,7 @@ public class PlatformConfig {
         return platformName;
     }
 
-    public int getMaxCoursePerInstructor() {
-        return maxCoursePerInstructor;
+    public int getMaxCoursesPerInstructor() {
+        return maxCoursesPerInstructor;
     }
 }
-
-

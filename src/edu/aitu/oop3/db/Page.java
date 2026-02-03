@@ -1,4 +1,4 @@
-package edu.aitu.oop3.db.secml;
+package edu.aitu.oop3.db;
 
 import java.util.List;
 
@@ -7,13 +7,13 @@ public class Page<T> {
     private final List<T> content;
     private final int page;
     private final int size;
-    private final long totalelements;
+    private final long totalElements;
 
-    public Page(List<T> content, int page, int size, long totalelements) {
+    public Page(List<T> content, int page, int size, long totalElements) {
         this.content = content;
         this.page = page;
         this.size = size;
-        this.totalelements = totalelements;
+        this.totalElements = totalElements;
     }
 
     public List<T> getContent() {
@@ -28,12 +28,11 @@ public class Page<T> {
         return size;
     }
 
-    public long getTotalelements() {
-        return totalelements;
+    public long getTotalElements() {
+        return totalElements;
     }
 
     public int getTotalPages() {
-        return (int) Math.ceil((double) totalelements / size);
+        return (int) Math.ceil((double) totalElements / size);
     }
 }
-
