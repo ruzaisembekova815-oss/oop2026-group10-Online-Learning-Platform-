@@ -10,7 +10,6 @@ public abstract class Lesson {
         this.courseId = courseId;
     }
 
-    // Getters & setters
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
     public String getTitle() { return title; }
