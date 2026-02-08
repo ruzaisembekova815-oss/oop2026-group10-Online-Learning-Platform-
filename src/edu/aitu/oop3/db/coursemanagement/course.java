@@ -51,7 +51,7 @@ public class course {
         return tags;
     }
 
-    // MISSING SETTERS — ADD THESE!
+
     public void setTitle(String title) {
         this.title = title;
     }

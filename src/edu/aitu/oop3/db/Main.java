@@ -1,13 +1,13 @@
 package edu.aitu.oop3.db;
 
 import edu.aitu.oop3.db.DatabaseConnection;
-import edu.aitu.oop3.db.service.EnrollmentService;
-import edu.aitu.oop3.db.service.ProgressService;
+import edu.aitu.oop3.db.learning.EnrollmentService;
+import edu.aitu.oop3.db.learning.ProgressService;
 
-import edu.aitu.oop3.db.entity.CourseBuilder;
-import edu.aitu.oop3.db.entity.Lesson;
-import edu.aitu.oop3.db.entity.course;
-import edu.aitu.oop3.db.factory.LessonFactory;
+import edu.aitu.oop3.db.coursemanagement.CourseBuilder;
+import edu.aitu.oop3.db.learning.Lesson;
+import edu.aitu.oop3.db.coursemanagement.course;
+import edu.aitu.oop3.db.learning.LessonFactory;
 
 import java.sql.Connection;
 import java.sql.SQLException;
