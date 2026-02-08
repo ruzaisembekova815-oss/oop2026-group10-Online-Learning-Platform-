@@ -1,4 +1,4 @@
-package edu.aitu.oop3.db.entity;
+package edu.aitu.oop3.db.learning;
 
 public abstract class Lesson {
     private int id;

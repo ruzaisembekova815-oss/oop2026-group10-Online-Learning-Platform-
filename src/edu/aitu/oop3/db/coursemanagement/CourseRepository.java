@@ -1,6 +1,7 @@
-package edu.aitu.oop3.db.repository;
+package edu.aitu.oop3.db.coursemanagement;
 
-import edu.aitu.oop3.db.entity.course;
+import edu.aitu.oop3.db.repository.Repository;
+
 import java.util.List;
 
 public interface CourseRepository extends Repository<course, Integer> {

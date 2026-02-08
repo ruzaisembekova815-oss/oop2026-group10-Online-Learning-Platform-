@@ -1,4 +1,4 @@
-package edu.aitu.oop3.db.exceptions;
+package edu.aitu.oop3.db.learning;
 
 public class LessonNotFoundException extends RuntimeException {
 

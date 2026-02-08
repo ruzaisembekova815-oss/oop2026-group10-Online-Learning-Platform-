@@ -1,4 +1,4 @@
-package edu.aitu.oop3.db.entity;
+package edu.aitu.oop3.db.usermanagement;
 
 public class user {
         private int id;

@@ -1,4 +1,4 @@
-package edu.aitu.oop3.db.service;
+package edu.aitu.oop3.db.learning;
 
 import edu.aitu.oop3.db.entity.lesson;
 

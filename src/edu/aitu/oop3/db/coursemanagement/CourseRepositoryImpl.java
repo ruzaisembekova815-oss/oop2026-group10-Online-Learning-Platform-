@@ -1,7 +1,6 @@
-package edu.aitu.oop3.db.repository;
+package edu.aitu.oop3.db.coursemanagement;
 
 import edu.aitu.oop3.db.IDB;
-import edu.aitu.oop3.db.entity.course;
 
 import java.sql.*;
 import java.util.ArrayList;

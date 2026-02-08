@@ -1,4 +1,4 @@
-package edu.aitu.oop3.db.exceptions;
+package edu.aitu.oop3.db.usermanagement;
 
 public class UserNotEnrolledException extends RuntimeException {
 
