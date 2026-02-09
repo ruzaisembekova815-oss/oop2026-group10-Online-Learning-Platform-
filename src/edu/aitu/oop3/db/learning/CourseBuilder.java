@@ -1,4 +1,6 @@
-package edu.aitu.oop3.db.entity;
+package edu.aitu.oop3.db.learning;
+
+import edu.aitu.oop3.db.coursemanagement.course;
 
 import java.util.ArrayList;
 import java.util.List;

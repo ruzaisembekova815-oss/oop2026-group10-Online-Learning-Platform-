@@ -1,9 +1,9 @@
 package edu.aitu.oop3.db.factory;
 
-import edu.aitu.oop3.db.entity.Lesson;
-import edu.aitu.oop3.db.entity.VideoLesson;
-import edu.aitu.oop3.db.entity.TextLesson;
-import edu.aitu.oop3.db.entity.QuizLesson;
+import edu.aitu.oop3.db.learning.Lesson;
+import edu.aitu.oop3.db.learning.VideoLesson;
+import edu.aitu.oop3.db.learning.TextLesson;
+import edu.aitu.oop3.db.learning.QuizLesson;
 
 public class LessonFactory {
     public Lesson createLesson(String type, String title, int courseId, String content) {

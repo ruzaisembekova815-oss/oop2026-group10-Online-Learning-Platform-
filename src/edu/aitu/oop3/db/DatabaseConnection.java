@@ -4,7 +4,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.List;
 
-public class    DatabaseConnection {
+public class DatabaseConnection implements IDB {
     private static final String URL =
             "jdbc:postgresql://aws-1-ap-southeast-1.pooler.supabase.com:6543/postgres?sslmode=require";
     private static final String USER = "postgres.mijqjvlwhigsxejmxqba";
@@ -12,7 +12,11 @@ public class    DatabaseConnection {
     private DatabaseConnection() {
         // no instances
     }
-    public static Connection getConnection() throws SQLException {
+    public static IDB getInstance() {  // ← ADD THIS
+        return new DatabaseConnection();
+    }
+    @Override
+    public Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
 

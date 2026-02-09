@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class course {
-    private int id;
+    private int id = 0;
     private String title;
     private String description;
     private int instructorId;

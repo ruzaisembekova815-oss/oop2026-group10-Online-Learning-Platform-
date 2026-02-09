@@ -7,7 +7,10 @@ import java.sql.SQLException;
 public class DemoUsersExample {
     public static void main(String[] args) {
         System.out.println("Demo: create table, insert, select");
-        try (Connection connection = DatabaseConnection.getConnection()) {
+
+        IDB db = DatabaseConnection.getInstance();
+
+        try (Connection connection = db.getConnection()) {
             createTableIfNeeded(connection);
             insertUser(connection, "Alice", "alice@example.com");
             insertUser(connection, "Bob", "bob@example.com");

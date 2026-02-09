@@ -1,6 +1,6 @@
 package edu.aitu.oop3.db.learning;
 
-import edu.aitu.oop3.db.entity.Lesson;  // ← ADD THIS
+import edu.aitu.oop3.db.learning.Lesson;  // ← ADD THIS
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;

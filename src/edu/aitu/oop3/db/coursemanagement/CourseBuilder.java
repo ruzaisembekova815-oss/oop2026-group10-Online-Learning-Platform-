@@ -51,6 +51,7 @@ public class CourseBuilder {
         c.setArchived(archived);
         c.setLessons(lessons);
         c.setTags(tags);
+        c.setId(0);
         return c;
     }
 }
