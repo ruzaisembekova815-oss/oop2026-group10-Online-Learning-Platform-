@@ -124,7 +124,7 @@ public class Main {
             newCourse.getLessons().add(lesson);
         }
 
-        // SAVE TO DATABASE — this line was missing!
+      
         course savedCourse = courseService.addCourse(newCourse);
 
         System.out.println("\nCourse created and saved to Supabase!");
